@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Ekaterina Kokurina | Educator's Portfolio</title>
+    <style>
+        /* ----- GOOGLE FONTS & RESET ----- */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #f7f2ff;  /* light purple background */
+            font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+            line-height: 1.55;
+            color: #2e1a3e;
+            padding: 36px 24px;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 32px;
+            box-shadow: 0 25px 45px rgba(106, 13, 173, 0.08);
+            overflow: hidden;
+        }
+
+        /* header with photo (light purple gradient) */
+        .header {
+            background: linear-gradient(135deg, #ede4ff, #dccfff);
+            padding: 32px 32px 24px;
+            text-align: center;
+            border-bottom: 2px solid #cdbbf5;
+        }
+
+        .photo {
+            width: 140px;
+            height: 140px;
+            margin: 0 auto 18px;
+            border-radius: 50%;
+            background: #c3acfc;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            border: 4px solid white;
+            box-shadow: 0 8px 18px rgba(0,0,0,0.08);
+        }
+
+        .photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .photo-placeholder-text {
+            font-size: 12px;
+            color: #4b2f73;
+            text-align: center;
+            font-weight: 500;
+        }
+
+        .header h1 {
+            font-size: 2.3rem;
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            color: #311c5e;
+            letter-spacing: -0.3px;
+        }
+
+        .header .sub {
+            color: #503a7c;
+            font-weight: 500;
+            margin-top: 6px;
+            font-size: 1rem;
+        }
+
+        /* main content */
+        .content {
+            padding: 36px 40px;
+        }
+
+        /* section styling */
+        .section {
+            margin-bottom: 48px;
+            scroll-margin-top: 20px;
+        }
+
+        .section-title {
+            font-size: 1.9rem;
+            font-weight: 700;
+            font-family: 'Playfair Display', serif;
+            color: #563d8c;
+            border-left: 7px solid #bc96ff;
+            padding-left: 20px;
+            margin-bottom: 20px;
+            margin-top: 6px;
+        }
+
+        .subsection-title {
+            font-size: 1.45rem;
+            font-weight: 600;
+            color: #694daf;
+            margin: 24px 0 12px 0;
+            padding-bottom: 5px;
+            border-bottom: 2px solid #e4d6ff;
+        }
+
+        /* tables */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+            border-radius: 20px;
+            overflow-x: auto;
+            display: block;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+        }
+        th, td {
+            border: 1px solid #e2d4ff;
+            padding: 12px 14px;
+            vertical-align: top;
+            background-color: #ffffff;
+        }
+        th {
+            background-color: #f5efff;
+            font-weight: 700;
+            color: #3e2570;
+        }
+        .card {
+            background: #fdfaff;
+            padding: 18px 24px;
+            border-radius: 24px;
+            margin: 18px 0;
+            border: 1px solid #ede3ff;
+            transition: all 0.1s ease;
+        }
+        ul, ol {
+            padding-left: 28px;
+            margin: 12px 0;
+        }
+        li {
+            margin: 6px 0;
+        }
+        hr {
+            margin: 24px 0;
+            border: none;
+            height: 1px;
+            background: linear-gradient(to right, #e0d0ff, #f7f0ff);
+        }
+        .btn-link {
+            background: #ede2ff;
+            padding: 5px 14px;
+            border-radius: 60px;
+            text-decoration: none;
+            color: #422b77;
+            font-weight: 500;
+            display: inline-block;
+            margin: 6px 4px 6px 0;
+            transition: 0.2s;
+            font-size: 0.9rem;
+        }
+        .btn-link:hover {
+            background: #d7c4ff;
+        }
+        .footer {
+            background: #f5efff;
+            text-align: center;
+            padding: 20px;
+            font-size: 0.85rem;
+            color: #5a418f;
+            border-top: 1px solid #e2d5fc;
+        }
+
+        /* responsive */
+        @media (max-width: 700px) {
+            body { padding: 20px 12px; }
+            .content { padding: 20px 22px; }
+            .section-title { font-size: 1.55rem; }
+            .header h1 { font-size: 1.7rem; }
+        }
+        /* images from original will be displayed */
+        .portfolio-img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 20px;
+            margin: 15px 0;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+        .img-inline {
+            display: block;
+            margin: 16px auto;
+            max-width: 100%;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <div class="photo" id="photoContainer">
+            <!-- replace with your actual photo file (e.g., "cv-photo.jpg") -->
+            <img id="profilePic" src="images/image5.png" alt="Ekaterina Kokurina" onerror="this.onerror=null; this.parentElement.innerHTML='<span class=\'photo-placeholder-text\'>📷 Add photo (cv-photo.jpg)</span>';">
+        </div>
+        <h1>Ekaterina Kokurina</h1>
+        <div class="sub">National Research University Higher School of Economics · St. Petersburg School of Arts and Humanities</div>
+        <div class="sub">Department of Foreign Languages · Minor: Language Culture and Intercultural Communication</div>
+        <div class="sub" style="margin-top: 8px;"><strong>Group number 4</strong> | Supervisors: Vladimir Pavlov, Natalia Nikitina</div>
+    </div>
+
+    <div class="content">
+        <!-- EXECUTIVE SUMMARY -->
+        <div class="section">
+            <div class="section-title">Executive Summary</div>
+            <div class="card">
+                <p>The purpose of this portfolio is to provide a complex overview of my competencies as an educator, highlighting my evolving teaching strategies, reflective practices and skills. It demonstrates my progress in language teaching and showcases my dedication to developing various materials to adjust to different learners' needs.</p>
+                <p>The portfolio includes many different items such as a reflective essay, language analyses, self-designed projects and events, a learner analysis, language practice tasks, activities for an authentic text, a lesson plan, a textbook evaluation and a guided discovery worksheet as well as a video of a part of my lesson, my CV and an educator's philosophy. Together, these materials provide an overview of my creativity, language skills and development as an English teacher. The portfolio is presented in the pdf format as well as a website to make all components accessible for easy viewing and navigation.</p>
+            </div>
+        </div>
+
+        <!-- REFLECTIVE ESSAY (fully preserved) -->
+        <div class="section">
+            <div class="section-title">Reflective Essay</div>
+            <div class="card">
+                <p><strong>Introduction</strong><br>This essay aims to critically evaluate the experience I gained during the Minor course by reflecting on the skills that I acquired, highlighting the areas for personal growth and establishing my plans in the educational environment. In the future, I would like to work as an English teacher for an international language school where I plan to teach people from all around the world. I find it inspiring to adapt teaching strategies to diverse needs taking into account people's cultural backgrounds.</p>
+                <p><strong>Educational Practices Learned</strong><br>During the Minor course I discovered that how to teach is just as important as what to teach. The choice of appropriate methods and techniques is crucial for addressing the needs of different learners. For instance, I learned that the present-practice-produce approach works better in a teacher-centered classroom with lower-level students. In addition, the course helped me to understand the essential role of teacher's feedback and how important it is to give it properly. Also, I learned how to create visually appealing handouts and organize my lessons in a way that makes them engaging.</p>
+                <p><strong>Strengths as a Future Educator</strong><br>One of my key strengths as a future educator is that I am passionate about learning. I will definitely try to improve my lessons by using feedback from my students and observing other tutors. Moreover, I am patient and kind which will help me to create a friendly environment during my lessons. I am also a well-organised person, so I will be able to plan lessons effectively and make sure that all materials are prepared in advance.</p>
+            </div>
+            <div class="subsection-title">Professional Development Plan</div>
+            <table>
+                <thead><tr><th>Areas to work on</th><th>What I am going to do</th><th>Why this will help</th></tr></thead>
+                <tbody>
+                    <tr><td>Confidence while teaching</td><td>Work with different age groups/people with various cultural backgrounds</td><td>I will get valuable experience in working with diverse groups of learners and adapt some techniques, which will gradually help me build more confidence</td></tr>
+                    <tr><td>Communication skills</td><td>Watch different webinars, observe experienced teachers and practice explaining ideas in a simple and clear way</td><td>I will improve the way I express myself and I will be able to communicate more effectively with my students</td></tr>
+                    <tr><td>Classroom management</td><td>Try different techniques to make everyone engaged using digital tools, interactive tasks and group works</td><td>I will find the most suitable approaches that work better with particular groups of learners and I will implement them in the future</td></tr>
+                </tbody>
+            </table>
+            <div class="card"><p><strong>Conclusion</strong><br>Overall, my experience in the Minor was very valuable as I learned a lot about the process of language learning from both the teacher's and the student's perspectives. I think the knowledge I gained will definitely help me in my future studies and professional development as an educator.</p></div>
+        </div>
+
+        <!-- LANGUAGE ANALYSES - LINKS ONLY -->
+        <div class="section">
+            <div class="section-title">Language Analyses</div>
+            <div class="card">
+                <ul>
+                    <li><strong><a href="https://docs.google.com/document/d/1Z63KBjr6d9K9pj_TOBtXBUVLdnI8mMW8CUTtDVptOo8/edit?tab=t.0#bookmark=id.qe90pkidqya" target="_blank" class="btn-link">Grammar Language Analysis</a></strong> (-ing/-ed adjectives)</li>
+                    <li><strong><a href="https://docs.google.com/document/d/1Z63KBjr6d9K9pj_TOBtXBUVLdnI8mMW8CUTtDVptOo8/edit?tab=t.0#bookmark=id.t2aa6f4cs9pb" target="_blank" class="btn-link">Vocabulary Language Analysis</a></strong> (the word "awkward")</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- LEARNING PROJECT - LINK ONLY -->
+        <div class="section">
+            <div class="section-title">Learning Project</div>
+            <div class="card">
+                
+                <p style="text-align: center; margin: 20px 0;">
+                    <a href="https://docs.google.com/document/d/1Z63KBjr6d9K9pj_TOBtXBUVLdnI8mMW8CUTtDVptOo8/edit?tab=t.0#bookmark=id.3fwyq2n1uc47" target="_blank" class="btn-link" style="font-size: 1rem;">📘 Open Learning Project Description</a>
+                </p>
+            </div>
+        </div>
+
+        <!-- EXTRACURRICULAR EVENT - LINK ONLY -->
+        <div class="section">
+            <div class="section-title">Extracurricular Event: "Around the World in One Day"</div>
+            <div class="card">
+               
+                <p style="text-align: center; margin: 20px 0;">
+                    <a href="https://docs.google.com/document/d/1Z63KBjr6d9K9pj_TOBtXBUVLdnI8mMW8CUTtDVptOo8/edit?tab=t.0#bookmark=id.tm4q0yey2y2q" target="_blank" class="btn-link" style="font-size: 1rem;">🌍 Open Extracurricular Event Description</a>
+                </p>
+            </div>
+        </div>
+
+        <!-- LEARNER ANALYSIS VITA - LINK ONLY -->
+        <div class="section">
+            <div class="section-title">Learner Analysis</div>
+            <div class="card">
+                
+                <p style="text-align: center; margin: 20px 0;">
+                    <a href="https://docs.google.com/document/d/1Z63KBjr6d9K9pj_TOBtXBUVLdnI8mMW8CUTtDVptOo8/edit?tab=t.0#bookmark=id.48evvdr1tkz4" target="_blank" class="btn-link" style="font-size: 1rem;">📖 Open Learner Analysis</a>
+                </p>
+            </div>
+        </div>
+
+        <!-- LANGUAGE PRACTICE TASKS (WEATHER) - LINKS ONLY -->
+        <div class="section">
+            <div class="section-title">Language Practice Tasks </div>
+            <div class="card">
+                
+                <ul>
+                    
+                    <li><strong><a href="https://docs.google.com/document/d/1Z63KBjr6d9K9pj_TOBtXBUVLdnI8mMW8CUTtDVptOo8/edit?tab=t.0#bookmark=id.154p4qa41ez" target="_blank" class="btn-link">Controlled Practice Task</a></strong></li>
+                    <li><strong><a href="https://docs.google.com/document/d/1Z63KBjr6d9K9pj_TOBtXBUVLdnI8mMW8CUTtDVptOo8/edit?tab=t.0#bookmark=id.bax1r7o60bke" target="_blank" class="btn-link">Freer Practice Task</a></strong></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- ACTIVITIES FOR AUTHENTIC TEXT - LINKS ONLY -->
+        <div class="section">
+            <div class="section-title">Activities for an Authentic Text </div>
+            <div class="card">
+                
+                <ul>
+                    <li><strong><a href="https://docs.google.com/document/d/1Z63KBjr6d9K9pj_TOBtXBUVLdnI8mMW8CUTtDVptOo8/edit?tab=t.0#bookmark=id.6sqb63grspum" target="_blank" class="btn-link">Activities Description</a></strong></li>
+                    <li><strong><a href="https://docs.google.com/document/d/1Z63KBjr6d9K9pj_TOBtXBUVLdnI8mMW8CUTtDVptOo8/edit?tab=t.0#bookmark=id.daopq89od0f2" target="_blank" class="btn-link">Handout</a></strong></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- LESSON PLAN - LINK ONLY -->
+        <div class="section">
+            <div class="section-title">Lesson Plan: Psychological Problems Students Face</div>
+            <div class="card">
+                
+                    <a href="https://docs.google.com/document/d/1Z63KBjr6d9K9pj_TOBtXBUVLdnI8mMW8CUTtDVptOo8/edit?tab=t.0#bookmark=id.u2g4hhkdrla5" target="_blank" class="btn-link" style="font-size: 1rem;">📝 Open Lesson Plan</a>
+                </p>
+            </div>
+        </div>
+
+               <!-- VIDEO LESSON SECTION (separate) -->
+        <div class="section">
+            <div class="section-title">Video of a Lesson</div>
+            <div class="card">
+                <p>🎥 <strong>Video link:</strong> <a href="https://disk.360.yandex.ru/i/4WJknxUBJ1sbIQ" class="btn-link" target="_blank">Watch lesson (12 min)</a> – Future tenses (Simple, Continuous, Perfect, Perfect Continuous).<br>
+                📊 <strong>PowerPoint:</strong> <a href="https://docs.google.com/presentation/d/1BNvY8vsdlYz3sSL7mbK2nxACFOXNdkH9lGtSLVRTWXU/edit?usp=sharing" class="btn-link" target="_blank">Future Tenses Slides</a><br>
+                📘 <strong>Lesson Aims:</strong> <a href="https://docs.google.com/document/d/1Z63KBjr6d9K9pj_TOBtXBUVLdnI8mMW8CUTtDVptOo8/edit?tab=t.0#bookmark=id.bdbktpco8t3" class="btn-link" target="_blank">View Aims in Google Docs</a><br>
+                <strong>Plan:</strong> warm-up, lead-in, detailed explanation, controlled → freer tasks</p>
+            </div>
+        </div>
+
+        <!-- GUIDED DISCOVERY SECTION (separate) -->
+        <div class="section">
+            <div class="section-title">Guided Discovery Worksheet</div>
+            <div class="card">
+                <p><strong>"The Mystery of the Missing Wallet" (Past Perfect)</strong><br>
+                
+                <p style="text-align: center; margin: 20px 0;">
+                    <a href="https://docs.google.com/document/d/1Z63KBjr6d9K9pj_TOBtXBUVLdnI8mMW8CUTtDVptOo8/edit?tab=t.0#bookmark=id.ud9q3wy6b82j" target="_blank" class="btn-link" style="font-size: 1rem;">📄 Open Guided Discovery Worksheet</a>
+                </p>
+            </div>
+        </div>
+
+        <!-- TEXTBOOK EVALUATION - LINK ONLY -->
+        <div class="section">
+            <div class="section-title">Textbook Evaluation: New Headway Advanced (4th ed.)</div>
+            <div class="card">
+                
+                <p style="text-align: center; margin: 20px 0;">
+                    <a href="https://docs.google.com/document/d/1Z63KBjr6d9K9pj_TOBtXBUVLdnI8mMW8CUTtDVptOo8/edit?tab=t.0#bookmark=id.d6jsm8eo99zn" target="_blank" class="btn-link" style="font-size: 1rem;">📚 Open Textbook Evaluation</a>
+                </p>
+            </div>
+        </div>
+
+        <!-- EDUCATOR'S PHILOSOPHY (complete original) -->
+        <div class="section">
+            <div class="section-title">Educator's Philosophy</div>
+            <div class="card">
+                <p>The purpose of this part of the portfolio is to outline my thoughts and beliefs about language teaching and learning. It includes some of my educational perspectives and practices, professional goals as an educator and highlights the peculiarities of the approaches I am planning to use as a future English teacher.</p>
+                <p>I believe that it is possible to learn languages at any age and under any circumstances. In my opinion, students learn best when they are both intrinsically and extrinsically motivated. Intrinsic motivation helps learners develop curiosity and independence, while extrinsic motivation can support persistence in learning. I see the educator's role as a guide who monitors the learning process and motivates learners. My primary goals for students are to develop independence, communication skills and critical thinking abilities. My philosophy has been shaped by my own experience learning a second language in school and at university. Observing my teachers who always used encouragement and real-life tasks to motivate learners showed me the power of guided and supportive teaching. Reading about self-determination theory during the Minor course reinforced my belief in balancing intrinsic and extrinsic rewards.</p>
+                <p>Optimal motivation according to this theory depends on satisfying the needs for autonomy, competence, and relatedness. Autonomy is the need to feel in control of your own life and choices. Competence is the need to feel capable and effective at what you do. Relatedness is the need to feel connected and cared for by other people. As an educator, my main goal is to follow these principles and create an environment where students are able to achieve their goals. My aim is to help students succeed academically and grow personally - gaining confidence, independence, and a love for lifelong learning. In teaching practice, I want students to acquire practical language skills for real-life use.</p>
+                <p>To achieve my goals, I will use different methods such as student-centered approach and task-based learning which support intrinsic motivation by making learning relevant and collaborative. In this framework, students are not passive recipients of information but active participants in the learning process. I will design tasks that require discussion and decision-making, allowing students to connect new knowledge with their own interests and experiences. Extrinsic motivation will be maintained through clear progress tracking and positive reinforcement. For assessment, I will use both formative and summative methods. Formative assessments such as quizzes, feedback sessions, and in-class questioning will help to monitor progress. Summative assessments will help me evaluate overall achievement of learning outcomes.</p>
+                <p>In conclusion, I am willing to create supportive learning environments where students can grow both academically and personally, given the right balance of intrinsic and extrinsic motivation. My goal is to help students transition from relying on external rewards to becoming self-motivated learners who are passionate about learning languages.</p>
+            </div>
+        </div>
+
+        <!-- CV + INTERVIEW (fully preserved with image) -->
+        
+            <div class="section">
+            <div class="section-title">Curriculum Vitae & Interview Q&A</div>
+            <div class="card">
+                <img src="images/image5.png" alt="CV photo icon" class="portfolio-img" style="width:110px; float:right; border-radius:20px;" onerror="this.style.display='none'">
+                
+                <p><strong>Ekaterina Kokurina</strong><br>
+                Date of birth: 19 February 2005 | Nationality: Russian | Email: katya.kokurina2005@gmail.com</p>
+                
+                <p><strong>Education:</strong></p>
+                <p><strong>2023 – to present</strong> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The National Research University - Higher School of Economics<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;BSc "Geography of Global Changes and Geoinformation Technologies"<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Professional Retraining Program "Teacher of English as a Second Language"</p>
+                
+                <p><strong>2019-2021</strong> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Russian-British school<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;IGCSEs (June 2021) Results: 9-9 (Science DBL), 9 (ESL), 8 (Spoken language), 9 (Mathematics)</p>
+                
+                <p><strong>2012-2023</strong> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Moscow city school № 1210<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;High school Diploma with Honors (2023)<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;General secondary school Diploma (Attestat) with Honors (2021)</p>   <strong>Internships:</strong> University of Amsterdam (Pre-University Honours), Bauhaus-Universität Weimar (Urban Heat Islands).<br>
+                <strong>Personal qualities:</strong> determined, responsible, initiative, broad-minded.<br>
+                <strong>Skills:</strong> English IELTS 7.5, French beginner. Hobbies: reading, drawing, mountain skiing, folk dancing.</p>
+                <hr>
+                <p><strong>1. Can you describe your teaching philosophy and approach to teaching English language learners?</strong><br>I believe that every learner can succeed in learning languages when the right approach is chosen by an educator. I try to understand each learner's background, motivation, and challenges first, and then adjust my teaching strategies. I can also provide clear feedback to support students and point out their areas for improvement.</p>
+                <p><strong>2. What are your strengths as a teacher?</strong><br>I am a patient, well-organised and enthusiastic educator. These qualities often help me to organise my lessons effectively and create a friendly environment. I also enjoy working with kids as well as with adults and I often try to learn and find new approaches by observing other tutors to make my lessons more engaging for different age groups.</p>
+                <p><strong>3. Imagine that your intermediate teenage students do not want to use English in class. Think of a strategy to motivate them to use English as much as possible.</strong><br>I think I would introduce gamification and real-life relevance into lessons. For example, I might create team-based challenges, role-playing activities (like ordering food or making social media content), or competitions with rewards. I would also try to connect lessons to their interests to make activities more engaging.</p>
+                <p><strong>4. What strategies do you use to help learners who are behind?</strong><br>Firstly, I would identify the problem and areas they struggle with. I may talk to these students personally. Then, I will try to motivate those students and make them as engaged in the lessons as possible. I will focus on building their confidence by celebrating small achievements and also provide regular feedback. I can also offer individual lessons to discuss difficulties.</p>
+                <p><strong>5. How do you stay updated with current trends, research, and best practices in ESL education, and how do you incorporate this knowledge into your teaching?</strong><br>I often read different professional blogs, attend webinars and follow ESL communities and educators online. When I learn new strategies, I test them in my lessons and reflect on their effectiveness. I might ask for students' feedback. Continuous learning helps me keep lessons modern, relevant, and effective. I also try to integrate AI tools in my lessons to create various materials and quizzes.</p>
+                <p><strong>6. Can you discuss a challenging situation you've encountered while teaching ESL and how you addressed it to support student learning and success? If you haven't taught yet, think of a situation when you were challenged as a language learner, and what did you do to help you learn?</strong><br>As a language learner I was always shy and rarely took part in group works. To overcome it, I practiced speaking with my family members or recording myself. As a teacher, I would help students with the same problem by creating a supportive classroom environment where mistakes are normalized. I would use pair work, small group discussions, and positive reinforcement to gradually build students' confidence and willingness to communicate. To motivate shy students I can also ask them regularly during the lessons to make them speak more and boost their confidence.</p>
+                <p><strong>7. How do you foster collaboration and peer interaction among ESL students to promote language practice and communication skills development?</strong><br>I encourage collaboration through pair and group activities such as role-plays, problem-solving tasks, and project-based learning. For example, students might work together to create a presentation of a traditional dish or act out a role-play in the shop. I also assign roles within groups to ensure that all the students participate.</p>
+                <p><strong>8. Imagine that a parent comes to you to talk about their kid's progress. They are very angry because they cannot see any progress despite the money they are paying, so they want to potentially withdraw the kid from the school. How will you handle the conversation to make sure that the parent is satisfied with your responses?</strong><br>Firstly, I would speak very politely and try not to interrupt them. I would try to provide specific examples of the student's progress, even if small, and explain the learning process. Then I can also share my lesson plans and point out student's areas for improvement which I am able to address. I would also try to demonstrate my dedication to teaching.</p>
+                <p><strong>9. How do you encourage ESL students to use English outside of the classroom?</strong><br>I often recommend watching different films and cartoons in English (in their original language) as they sound more natural. Sometimes I show some parts of them during the lessons. Also, I recommend using different digital tools and apps which make the learning process outside of the classroom more enjoyable.</p>
+                <p><strong>10. Can you discuss your approach to teaching English pronunciation, intonation, and phonetics to ESL students to improve their oral communication skills?</strong><br>When I introduce a new word or sound I model it first. Then I repeat it with my students chorally and individually. I often provide a board record and use body language. For instance, claps to show stressed syllables. Sometimes I use videos of native speakers to expose students to authentic speech. Regular practice is also essential to help students build confidence and improve their communication skills.</p>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        Ekaterina Kokurina – Educator's Portfolio © 2026<br>
+        Higher School of Economics, St. Petersburg | Minor: Language Culture and Intercultural Communication
+    </div>
+</div>
+</body>
+</html>
